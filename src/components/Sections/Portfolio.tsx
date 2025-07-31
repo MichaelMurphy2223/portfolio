@@ -75,7 +75,7 @@ const ItemOverlay: FC<{ item: PortfolioItem }> = memo(({ item: { title, descript
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50 text-white border border-1 rounded-lg transition duration-300 ease-out">
         <div className="fixed inset-0 w-screen overflow-y-auto p-4">
           <div className="flex min-h-full items-center justify-center">
-            <Dialog.Panel className="max-w-2xl space-y-4 bg-neutral-700 p-12">
+            <Dialog.Panel className="max-w-3xl space-y-4 bg-neutral-700 p-12">
               <Dialog.Title className="font-bold">{title}</Dialog.Title>
               {
                 content ? content : <p className="text-sm text-white">{description}</p>

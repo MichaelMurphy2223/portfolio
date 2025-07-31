@@ -214,55 +214,57 @@ export const portfolioItems: PortfolioItem[] = [
     content: (
       <>
         <div>
-          🔍 Overview:
+          🔍 Overview:<br />
           <p>
-            I developed and deployed a real-time fraud detection system for financial transactions, designed to flag suspicious activity and reduce false positives that were costing the business both revenue and customer trust.
+            I developed and deployed a real-time fraud detection system for financial transactions, designed to flag suspicious activity and reduce false positives that were costing the business both revenue and customer trust.<br />
           </p>
         </div>
         <div>
-          🧰 Tools and Technologies:
+          🧰 Tools and Technologies:<br />
           <p>
-            Data Ingestion: Apache Kafka for streaming transactions in real time
+            Data Ingestion: Apache Kafka for streaming transactions in real time<br />
 
-            Modeling: XGBoost (and LightGBM in some tests) for classification
+            Modeling: XGBoost (and LightGBM in some tests) for classification<br />
 
-            Data Processing: Spark Streaming for real-time transformations
+            Data Processing: Spark Streaming for real-time transformations<br />
 
-            Storage: PostgreSQL for labeled data; Redis for session state
+            Storage: PostgreSQL for labeled data; Redis for session state<br />
 
-            Deployment: Dockerized service running on AWS ECS/Fargate
+            Deployment: Dockerized service running on AWS ECS/Fargate<br />
 
-            Monitoring: Prometheus + Grafana for performance metrics; Sentry for alerts
+            Monitoring: Prometheus + Grafana for performance metrics; Sentry for alerts<br />
           </p>
         </div>
         <div>
-          🧠 Key Features:
+          🧠 Key Actions:<br />
           <p>
-            100+ Intents like “book appointment,” “cancel appointment,” “doctor available today?”, “clinic hours,” “I have chest pain,” etc.
+            Engineered real-time features like transaction velocity, location mismatches, device fingerprint patterns<br />
 
-            Context-aware conversations using slot-filling and state tracking.
+            Reduced model latency by optimizing inference pipeline and using quantized models<br />
 
-            Integrated real-time calendar availability from mock scheduling backend.
+            Designed feedback loop with weekly model retraining using labeled fraud outcomes<br />
+
+            Collaborated with risk and payments teams to tune risk thresholds and action triggers<br />
           </p>
         </div>
         <div>
-          ⚠️ Challenges Faced:
+          ⚠️ Challenges Faced:<br />
           <p>
-            Latency Constraint: Had to respond in under 200ms. Solved by caching features in Redis and running lightweight inference services close to edge using AWS Lambda.
+            Latency Constraint: Had to respond in under 200ms. Solved by caching features in Redis and running lightweight inference services close to edge using AWS Lambda.<br />
 
-            Data Drift: Fraud patterns changed frequently, so built auto-monitoring for feature distributions and retraining triggers.
+            Data Drift: Fraud patterns changed frequently, so built auto-monitoring for feature distributions and retraining triggers.<br />
 
-            Label Noise: Many transactions were misclassified manually. Introduced semi-supervised learning and active feedback from human reviewers.
+            Label Noise: Many transactions were misclassified manually. Introduced semi-supervised learning and active feedback from human reviewers.<br />
           </p>
         </div>
         <div>
-          ✅ Impact/Outcome:
+          ✅ Impact/Outcome:<br />
           <p>
-            Reduced false positives by 30%, improving legitimate transaction throughput
+            Reduced false positives by 30%, improving legitimate transaction throughput<br />
 
-            Boosted fraud detection recall by 25%, catching new fraud patterns sooner
+            Boosted fraud detection recall by 25%, catching new fraud patterns sooner<br />
 
-            Resulted in measurable reduction in chargebacks and improved trust with customers
+            Resulted in measurable reduction in chargebacks and improved trust with customers<br />
           </p>
         </div>
       </>
@@ -276,57 +278,57 @@ export const portfolioItems: PortfolioItem[] = [
     content: (
       <>
         <div>
-          🔍 Overview:
+          🔍 Overview:<br />
           <p>
-            I built a virtual healthcare assistant to automate appointment scheduling and answer common medical-related questions (e.g., symptoms, medications, doctor availability). The goal was to reduce human involvement and response time in clinics or health portals.
+            I built a virtual healthcare assistant to automate appointment scheduling and answer common medical-related questions (e.g., symptoms, medications, doctor availability). The goal was to reduce human involvement and response time in clinics or health portals.<br />
           </p>
         </div>
         <div>
-          🧰 Tools and Technologies:
+          🧰 Tools and Technologies:<br />
           <p>
-            NLP engine: Used Hugging Face Transformers, specifically DistilBERT and later BERT-base, fine-tuned on a domain-specific Q&A dataset for intent classification and response generation.
+            NLP engine: Used Hugging Face Transformers, specifically DistilBERT and later BERT-base, fine-tuned on a domain-specific Q&A dataset for intent classification and response generation.<br />
 
-            Rasa: Managed conversation flows, intent classification, and dialogue policies. Custom actions handled appointment booking and entity extraction.
+            Rasa: Managed conversation flows, intent classification, and dialogue policies. Custom actions handled appointment booking and entity extraction.<br />
 
-            FastAPI: Served the model via an API with lightweight endpoints for frontend integration.
+            FastAPI: Served the model via an API with lightweight endpoints for frontend integration.<br />
 
-            MongoDB: Stored user queries, interaction logs, and appointment data.
+            MongoDB: Stored user queries, interaction logs, and appointment data.<br />
 
-            Docker + NGINX: For containerization and efficient API load-balancing in a test environment.
+            Docker + NGINX: For containerization and efficient API load-balancing in a test environment.<br />
 
-            Streamlit: Built a basic UI to demo the assistant's functionality.
+            Streamlit: Built a basic UI to demo the assistant's functionality.<br />
           </p>
         </div>
         <div>
-          🧠 Key Features:
+          🧠 Key Features:<br />
           <p>
-            100+ Intents like “book appointment,” “cancel appointment,” “doctor available today?”, “clinic hours,” “I have chest pain,” etc.
+            100+ Intents like “book appointment,” “cancel appointment,” “doctor available today?”, “clinic hours,” “I have chest pain,” etc.<br />
 
-            Context-aware conversations using slot-filling and state tracking.
+            Context-aware conversations using slot-filling and state tracking.<br />
 
-            Integrated real-time calendar availability from mock scheduling backend.
+            Integrated real-time calendar availability from mock scheduling backend.<br />
           </p>
         </div>
         <div>
-          ⚠️ Challenges Faced:
+          ⚠️ Challenges Faced:<br />
           <p>
-            Ambiguous user inputs – Many medical queries are vague (e.g., “I feel bad”). Solved by enriching training data with paraphrased examples and using confidence thresholds with fallback handling.
+            Ambiguous user inputs – Many medical queries are vague (e.g., “I feel bad”). Solved by enriching training data with paraphrased examples and using confidence thresholds with fallback handling.<br />
 
-            Entity recognition for medical terms – Standard models failed to catch domain-specific entities like drug names or conditions. Used custom NER tagging with spaCy and fine-tuned biomedical embeddings (BioBERT).
+            Entity recognition for medical terms – Standard models failed to catch domain-specific entities like drug names or conditions. Used custom NER tagging with spaCy and fine-tuned biomedical embeddings (BioBERT).<br />
 
-            Latency optimization – Transformer models were initially slow in inference. I optimized it by switching to ONNX runtime and used batching + GPU acceleration in production testbed.
+            Latency optimization – Transformer models were initially slow in inference. I optimized it by switching to ONNX runtime and used batching + GPU acceleration in production testbed.<br />
 
-            Handling sensitive data – Designed the pipeline to be HIPAA-compliant ready (no real PII was used), and encrypted conversation logs.
+            Handling sensitive data – Designed the pipeline to be HIPAA-compliant ready (no real PII was used), and encrypted conversation logs.<br />
           </p>
         </div>
         <div>
-          ✅ Impact/Outcome:
+          ✅ Impact/Outcome:<br />
           <p>
-            {'<'}1s response time (average) after optimization.
+            {'<'}1s response time (average) after optimization.<br />
 
-            80%+ success rate in automated bookings during simulated testing with synthetic user inputs.
+            80%+ success rate in automated bookings during simulated testing with synthetic user inputs.<br />
 
-            Demo used as a PoC for a local clinic system pilot.
+            Demo used as a PoC for a local clinic system pilot.<br />
           </p>
         </div>
       </>
@@ -340,57 +342,57 @@ export const portfolioItems: PortfolioItem[] = [
     content: (
       <>
         <div>
-          🔍 Overview:
+          🔍 Overview:<br />
           <p>
             I designed and deployed a real-time recommendation system for an e-commerce platform aimed at improving customer retention and engagement. The primary goal was to provide dynamic, personalized product suggestions that respond to user behavior in real time — ultimately reducing user churn.
           </p>
         </div>
         <div>
-          🧰 Tools and Technologies:
+          🧰 Tools and Technologies:<br />
           <p>
-            Feature Storage & Streaming: Kafka, Redis, Amazon Kinesis
+            Feature Storage & Streaming: Kafka, Redis, Amazon Kinesis<br />
 
-            Modeling: Collaborative Filtering (Matrix Factorization via LightFM), Neural Collaborative Filtering (NCF), and a hybrid content-based layer (TF-IDF + product embeddings using Sentence-BERT)
+            Modeling: Collaborative Filtering (Matrix Factorization via LightFM), Neural Collaborative Filtering (NCF), and a hybrid content-based layer (TF-IDF + product embeddings using Sentence-BERT)<br />
 
-            Infrastructure: Airflow for training pipeline orchestration, MLflow for tracking, AWS SageMaker for model training and deployment
+            Infrastructure: Airflow for training pipeline orchestration, MLflow for tracking, AWS SageMaker for model training and deployment<br />
 
-            Serving: FastAPI-based service containerized with Docker, deployed on AWS ECS
+            Serving: FastAPI-based service containerized with Docker, deployed on AWS ECS<br />
 
-            Monitoring: Prometheus + Grafana for latency and throughput; custom feedback metrics for engagement scoring
+            Monitoring: Prometheus + Grafana for latency and throughput; custom feedback metrics for engagement scoring<br />
           </p>
         </div>
         <div>
-          🧠 Key Features:
+          🧠 Key Actions:<br />
           <p>
-            Built end-to-end pipelines: user-item matrix generation, feature extraction, model training, and batch + real-time serving
+            Built end-to-end pipelines: user-item matrix generation, feature extraction, model training, and batch + real-time serving<br />
 
-            Designed model inference API with sub-150ms latency to serve recommendations during user session
+            Designed model inference API with sub-150ms latency to serve recommendations during user session<br />
 
-            Implemented feedback loop using implicit feedback (clicks, time-on-page, purchases) to fine-tune ranking models weekly
+            Implemented feedback loop using implicit feedback (clicks, time-on-page, purchases) to fine-tune ranking models weekly<br />
 
-            Used A/B testing framework to measure improvement over baseline sort algorithms
+            Used A/B testing framework to measure improvement over baseline sort algorithms<br />
           </p>
         </div>
         <div>
-          ⚠️ Challenges Faced:
+          ⚠️ Challenges Faced:<br />
           <p>
-            Cold Start for New Users/Items: Solved using metadata-based content filtering backed by sentence embeddings of product descriptions and user demographics
+            Cold Start for New Users/Items: Solved using metadata-based content filtering backed by sentence embeddings of product descriptions and user demographics<br />
 
-            Sparse Interaction Matrix: Applied matrix factorization with confidence weighting + side information to improve performance
+            Sparse Interaction Matrix: Applied matrix factorization with confidence weighting + side information to improve performance<br />
 
-            Scalability: Introduced sharded user embeddings and used Faiss/Annoy for fast nearest-neighbor lookups under load
+            Scalability: Introduced sharded user embeddings and used Faiss/Annoy for fast nearest-neighbor lookups under load<br />
 
-            Drift Monitoring: Monitored CTR, conversion rate, and product diversity in recommendations daily to trigger retraining as needed
+            Drift Monitoring: Monitored CTR, conversion rate, and product diversity in recommendations daily to trigger retraining as needed<br />
           </p>
         </div>
         <div>
-          ✅ Impact/Outcome:
+          ✅ Impact/Outcome:<br />
           <p>
-            Churn dropped by 17% due to improved personalization
+            Churn dropped by 17% due to improved personalization<br />
 
-            Average session duration increased by 22%
+            Average session duration increased by 22%<br />
 
-            Adoption by marketing and product teams for targeting campaigns and homepage personalization
+            Adoption by marketing and product teams for targeting campaigns and homepage personalization<br />
           </p>
         </div>
       </>
@@ -410,53 +412,53 @@ export const portfolioItems: PortfolioItem[] = [
           </p>
         </div>
         <div>
-          🧰 Tools and Technologies:
+          🧰 Tools and Technologies:<br />
           <p>
-            Preprocessing: OpenCV for noise removal, binarization, and contour detection
+            Preprocessing: OpenCV for noise removal, binarization, and contour detection<br />
 
-            OCR: Tesseract for initial text extraction
+            OCR: Tesseract for initial text extraction<br />
 
-            Modeling: Custom Convolutional Neural Networks + pre-trained backbones like EfficientNet for layout classification
+            Modeling: Custom Convolutional Neural Networks + pre-trained backbones like EfficientNet for layout classification<br />
 
-            NLP Integration: SpaCy and rule-based extractors for parsing and validating OCR outputs
+            NLP Integration: SpaCy and rule-based extractors for parsing and validating OCR outputs<br />
 
-            Postprocessing: Heuristics and regex to clean extracted fields (dates, amounts, etc.)
+            Postprocessing: Heuristics and regex to clean extracted fields (dates, amounts, etc.)<br />
 
-            Deployment: Flask API containerized with Docker, deployed on AWS Lambda for scalability
+            Deployment: Flask API containerized with Docker, deployed on AWS Lambda for scalability<br />
           </p>
         </div>
         <div>
-          🧠 Key Features:
+          🧠 Key Actions:<br />
           <p>
-            Annotated 10K+ documents using label tools like LabelImg for training
+            Annotated 10K+ documents using label tools like LabelImg for training<br />
 
-            Designed a multi-task CNN model that predicts bounding boxes + class labels simultaneously
+            Designed a multi-task CNN model that predicts bounding boxes + class labels simultaneously<br />
 
-            Integrated OCR + CV pipeline for end-to-end field extraction
+            Integrated OCR + CV pipeline for end-to-end field extraction<br />
 
-            Developed confidence thresholds and fallback rules to handle low-confidence predictions
+            Developed confidence thresholds and fallback rules to handle low-confidence predictions<br />
           </p>
         </div>
         <div>
-          ⚠️ Challenges Faced:
+          ⚠️ Challenges Faced:<br />
           <p>
-            Low OCR accuracy on noisy scans: Used OpenCV filters and deskewing to pre-clean images
+            Low OCR accuracy on noisy scans: Used OpenCV filters and deskewing to pre-clean images<br />
 
-            Complex layouts with varying formats: Trained layout classification models and used positional anchors for consistency
+            Complex layouts with varying formats: Trained layout classification models and used positional anchors for consistency<br />
 
-            Imbalanced training data: Applied augmentation techniques like cropping, noise injection, and rotation to generalize better
+            Imbalanced training data: Applied augmentation techniques like cropping, noise injection, and rotation to generalize better<br />
 
-            Model latency: Reduced processing time by optimizing inference pipeline and using ONNX for model conversion
+            Model latency: Reduced processing time by optimizing inference pipeline and using ONNX for model conversion<br />
           </p>
         </div>
         <div>
-          ✅ Impact/Outcome:
+          ✅ Impact/Outcome:<br />
           <p>
-            Achieved 85%+ accuracy on test set (vs ~60% with baseline OCR alone)
+            Achieved 85%+ accuracy on test set (vs ~60% with baseline OCR alone)<br />
 
-            Reduced manual review time by over 40%
+            Reduced manual review time by over 40%<br />
 
-            Integrated into internal tooling, helping ops team process 1000+ documents/day
+            Integrated into internal tooling, helping ops team process 1000+ documents/day<br />
           </p>
         </div>
       </>
