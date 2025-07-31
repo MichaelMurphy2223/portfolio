@@ -7,10 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/fraud.jpg';
 import porfolioImage2 from '../images/portfolio/health.jpg';
@@ -64,16 +61,16 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a result-driven <strong className="text-stone-100">Machine Learning / Full Stack Software Engineer</strong>, 
-        with 5+ years of experience building scalable, production-grade ML systems and full-stack web applications. 
-        Proficient in <strong className="text-stone-100">Python, React, Django,</strong> and <strong className="text-stone-100">AWS</strong>, with expertise in <strong className="text-stone-100">LLMs, NLP</strong>, and <strong className="text-stone-100">MLOps</strong>. 
+        I'm a result-driven <strong className="text-stone-100">Machine Learning / Full Stack Software Engineer</strong>,
+        with 5+ years of experience building scalable, production-grade ML systems and full-stack web applications.
+        Proficient in <strong className="text-stone-100">Python, React, Django,</strong> and <strong className="text-stone-100">AWS</strong>, with expertise in <strong className="text-stone-100">LLMs, NLP</strong>, and <strong className="text-stone-100">MLOps</strong>.
         Proven ability to deliver end-to-end solutions that combine intelligent automation with modern web interfaces.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '/assets/MichaelMurphy.docx',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -95,10 +92,10 @@ export const aboutData: About = {
   Proficient in Python, React, Django, and AWS, with expertise in LLMs, NLP, and MLOps. 
   Proven ability to deliver end-to-end solutions that combine intelligent automation with modern web interfaces.`,
   aboutItems: [
-    {label: 'Location', text: 'Titusville, FL', Icon: MapIcon},
-    {label: 'Age', text: '30', Icon: CalendarIcon},
-    {label: 'Interests', text: 'Football', Icon: SparklesIcon},
-    {label: 'Study', text: 'CUNY - Hunter College', Icon: AcademicCapIcon},
+    { label: 'Location', text: 'Titusville, FL', Icon: MapIcon },
+    { label: 'Age', text: '30', Icon: CalendarIcon },
+    { label: 'Interests', text: 'Football', Icon: SparklesIcon },
+    { label: 'Study', text: 'CUNY - Hunter College', Icon: AcademicCapIcon },
   ],
 };
 
@@ -159,10 +156,6 @@ export const skills: SkillGroup[] = [
         name: 'Typescript',
         level: 10,
       },
-      {
-        name: 'GraphQL',
-        level: 10,
-      },
     ],
   },
   {
@@ -218,24 +211,256 @@ export const portfolioItems: PortfolioItem[] = [
     description: 'Real-time fraud detection system using machine learning to analyze transaction patterns and detect anomalies.',
     url: 'https://reactresume.com',
     image: porfolioImage1,
+    content: (
+      <>
+        <div>
+          🔍 Overview:
+          <p>
+            I developed and deployed a real-time fraud detection system for financial transactions, designed to flag suspicious activity and reduce false positives that were costing the business both revenue and customer trust.
+          </p>
+        </div>
+        <div>
+          🧰 Tools and Technologies:
+          <p>
+            Data Ingestion: Apache Kafka for streaming transactions in real time
+
+            Modeling: XGBoost (and LightGBM in some tests) for classification
+
+            Data Processing: Spark Streaming for real-time transformations
+
+            Storage: PostgreSQL for labeled data; Redis for session state
+
+            Deployment: Dockerized service running on AWS ECS/Fargate
+
+            Monitoring: Prometheus + Grafana for performance metrics; Sentry for alerts
+          </p>
+        </div>
+        <div>
+          🧠 Key Features:
+          <p>
+            100+ Intents like “book appointment,” “cancel appointment,” “doctor available today?”, “clinic hours,” “I have chest pain,” etc.
+
+            Context-aware conversations using slot-filling and state tracking.
+
+            Integrated real-time calendar availability from mock scheduling backend.
+          </p>
+        </div>
+        <div>
+          ⚠️ Challenges Faced:
+          <p>
+            Latency Constraint: Had to respond in under 200ms. Solved by caching features in Redis and running lightweight inference services close to edge using AWS Lambda.
+
+            Data Drift: Fraud patterns changed frequently, so built auto-monitoring for feature distributions and retraining triggers.
+
+            Label Noise: Many transactions were misclassified manually. Introduced semi-supervised learning and active feedback from human reviewers.
+          </p>
+        </div>
+        <div>
+          ✅ Impact/Outcome:
+          <p>
+            Reduced false positives by 30%, improving legitimate transaction throughput
+
+            Boosted fraud detection recall by 25%, catching new fraud patterns sooner
+
+            Resulted in measurable reduction in chargebacks and improved trust with customers
+          </p>
+        </div>
+      </>
+    )
   },
   {
     title: 'NLP-Powered Health Assistant',
     description: 'NLP-powered virtual assistant for scheduling appointments and answering health-related FAQs',
     url: 'https://reactresume.com',
     image: porfolioImage2,
+    content: (
+      <>
+        <div>
+          🔍 Overview:
+          <p>
+            I built a virtual healthcare assistant to automate appointment scheduling and answer common medical-related questions (e.g., symptoms, medications, doctor availability). The goal was to reduce human involvement and response time in clinics or health portals.
+          </p>
+        </div>
+        <div>
+          🧰 Tools and Technologies:
+          <p>
+            NLP engine: Used Hugging Face Transformers, specifically DistilBERT and later BERT-base, fine-tuned on a domain-specific Q&A dataset for intent classification and response generation.
+
+            Rasa: Managed conversation flows, intent classification, and dialogue policies. Custom actions handled appointment booking and entity extraction.
+
+            FastAPI: Served the model via an API with lightweight endpoints for frontend integration.
+
+            MongoDB: Stored user queries, interaction logs, and appointment data.
+
+            Docker + NGINX: For containerization and efficient API load-balancing in a test environment.
+
+            Streamlit: Built a basic UI to demo the assistant's functionality.
+          </p>
+        </div>
+        <div>
+          🧠 Key Features:
+          <p>
+            100+ Intents like “book appointment,” “cancel appointment,” “doctor available today?”, “clinic hours,” “I have chest pain,” etc.
+
+            Context-aware conversations using slot-filling and state tracking.
+
+            Integrated real-time calendar availability from mock scheduling backend.
+          </p>
+        </div>
+        <div>
+          ⚠️ Challenges Faced:
+          <p>
+            Ambiguous user inputs – Many medical queries are vague (e.g., “I feel bad”). Solved by enriching training data with paraphrased examples and using confidence thresholds with fallback handling.
+
+            Entity recognition for medical terms – Standard models failed to catch domain-specific entities like drug names or conditions. Used custom NER tagging with spaCy and fine-tuned biomedical embeddings (BioBERT).
+
+            Latency optimization – Transformer models were initially slow in inference. I optimized it by switching to ONNX runtime and used batching + GPU acceleration in production testbed.
+
+            Handling sensitive data – Designed the pipeline to be HIPAA-compliant ready (no real PII was used), and encrypted conversation logs.
+          </p>
+        </div>
+        <div>
+          ✅ Impact/Outcome:
+          <p>
+            {'<'}1s response time (average) after optimization.
+
+            80%+ success rate in automated bookings during simulated testing with synthetic user inputs.
+
+            Demo used as a PoC for a local clinic system pilot.
+          </p>
+        </div>
+      </>
+    )
   },
   {
     title: 'Real-Time Recommendation System',
-    description: 'Give a short description of your project here.',
+    description: 'Real-time recommendation system using content-based filtering to suggest products.',
     url: 'https://reactresume.com',
     image: porfolioImage3,
+    content: (
+      <>
+        <div>
+          🔍 Overview:
+          <p>
+            I designed and deployed a real-time recommendation system for an e-commerce platform aimed at improving customer retention and engagement. The primary goal was to provide dynamic, personalized product suggestions that respond to user behavior in real time — ultimately reducing user churn.
+          </p>
+        </div>
+        <div>
+          🧰 Tools and Technologies:
+          <p>
+            Feature Storage & Streaming: Kafka, Redis, Amazon Kinesis
+
+            Modeling: Collaborative Filtering (Matrix Factorization via LightFM), Neural Collaborative Filtering (NCF), and a hybrid content-based layer (TF-IDF + product embeddings using Sentence-BERT)
+
+            Infrastructure: Airflow for training pipeline orchestration, MLflow for tracking, AWS SageMaker for model training and deployment
+
+            Serving: FastAPI-based service containerized with Docker, deployed on AWS ECS
+
+            Monitoring: Prometheus + Grafana for latency and throughput; custom feedback metrics for engagement scoring
+          </p>
+        </div>
+        <div>
+          🧠 Key Features:
+          <p>
+            Built end-to-end pipelines: user-item matrix generation, feature extraction, model training, and batch + real-time serving
+
+            Designed model inference API with sub-150ms latency to serve recommendations during user session
+
+            Implemented feedback loop using implicit feedback (clicks, time-on-page, purchases) to fine-tune ranking models weekly
+
+            Used A/B testing framework to measure improvement over baseline sort algorithms
+          </p>
+        </div>
+        <div>
+          ⚠️ Challenges Faced:
+          <p>
+            Cold Start for New Users/Items: Solved using metadata-based content filtering backed by sentence embeddings of product descriptions and user demographics
+
+            Sparse Interaction Matrix: Applied matrix factorization with confidence weighting + side information to improve performance
+
+            Scalability: Introduced sharded user embeddings and used Faiss/Annoy for fast nearest-neighbor lookups under load
+
+            Drift Monitoring: Monitored CTR, conversion rate, and product diversity in recommendations daily to trigger retraining as needed
+          </p>
+        </div>
+        <div>
+          ✅ Impact/Outcome:
+          <p>
+            Churn dropped by 17% due to improved personalization
+
+            Average session duration increased by 22%
+
+            Adoption by marketing and product teams for targeting campaigns and homepage personalization
+          </p>
+        </div>
+      </>
+    )
   },
   {
     title: 'Document OCR System',
     description: 'OCR system for extracting text from financial documents, enabling automated data entry and analysis.',
     url: 'https://reactresume.com',
     image: porfolioImage4,
+    content: (
+      <>
+        <div>
+          🔍 Overview:
+          <p>
+            I built and deployed a CNN-based computer vision pipeline to parse structured and semi-structured documents like invoices, receipts, and forms. The goal was to automate information extraction (e.g., dates, totals, vendor names) with over 85% accuracy.
+          </p>
+        </div>
+        <div>
+          🧰 Tools and Technologies:
+          <p>
+            Preprocessing: OpenCV for noise removal, binarization, and contour detection
+
+            OCR: Tesseract for initial text extraction
+
+            Modeling: Custom Convolutional Neural Networks + pre-trained backbones like EfficientNet for layout classification
+
+            NLP Integration: SpaCy and rule-based extractors for parsing and validating OCR outputs
+
+            Postprocessing: Heuristics and regex to clean extracted fields (dates, amounts, etc.)
+
+            Deployment: Flask API containerized with Docker, deployed on AWS Lambda for scalability
+          </p>
+        </div>
+        <div>
+          🧠 Key Features:
+          <p>
+            Annotated 10K+ documents using label tools like LabelImg for training
+
+            Designed a multi-task CNN model that predicts bounding boxes + class labels simultaneously
+
+            Integrated OCR + CV pipeline for end-to-end field extraction
+
+            Developed confidence thresholds and fallback rules to handle low-confidence predictions
+          </p>
+        </div>
+        <div>
+          ⚠️ Challenges Faced:
+          <p>
+            Low OCR accuracy on noisy scans: Used OpenCV filters and deskewing to pre-clean images
+
+            Complex layouts with varying formats: Trained layout classification models and used positional anchors for consistency
+
+            Imbalanced training data: Applied augmentation techniques like cropping, noise injection, and rotation to generalize better
+
+            Model latency: Reduced processing time by optimizing inference pipeline and using ONNX for model conversion
+          </p>
+        </div>
+        <div>
+          ✅ Impact/Outcome:
+          <p>
+            Achieved 85%+ accuracy on test set (vs ~60% with baseline OCR alone)
+
+            Reduced manual review time by over 40%
+
+            Integrated into internal tooling, helping ops team process 1000+ documents/day
+          </p>
+        </div>
+      </>
+    )
   },
 ];
 
@@ -244,40 +469,81 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-  {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'September 2015 - May 2020',
+    location: 'Hunter College',
+    title: 'Masters in Computer Science',
+    content: <></>
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'Feburary 2023 - May 2025',
+    location: 'Guideline',
+    title: 'Senior Machine Learning Engineer',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <div>
+        <p>
+          - Developed and deployed a real-time fraud detection system that reduced false positives by 30% and improved detection accuracy by 25%
+        </p>
+        <p>
+          - Built a NLP-powered virtual assistant for scheduling appointments and answering health-related FAQs using Hugging Face Transformers and Rasa, reducing response latency under 1s for 100+ intents.
+        </p>
+        <p>
+          - Utilized Langchain to build modular and scalable prompt workflows for NLP tasks, enhancing the performance of customer support systems
+        </p>
+        <p>
+          - Led MLOps integration using MLflow and Docker, cutting deployment time by 40% Collaborated with cross-functional teams to productionize models via REST APIs on AWS
+        </p>
+      </div>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'April 2021 - December 2022',
+    location: 'Instabase',
+    title: 'Software Engineer',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <div>
+        <p>
+          - Built predictive models for financial forecasting and risk classification using ensemble techniques
+        </p>
+        <p>
+          - Designed and deployed end-to-end ML pipelines for real-time recommendation systems (reduced churn by 17%)
+        </p>
+        <p>
+          - Automated data pipelines with Airflow, reducing manual ETL time by 60%
+        </p>
+        <p>
+          - Designed and deployed an admin portal using Django + React for product analysts to manage ML experiments and model metadata.
+        </p>
+        <p>
+          - Collaborated with UX designers to implement responsive UIs with Tailwind CSS. Implemented computer vision models (CNN) for document parsing (85%+ accuracy) Integrated Langchain for building dynamic prompt-based solutions, enabling more flexible text extraction and classification
+        </p>
+        <p>
+          - Conducted A/B tests and model performance monitoring in production
+        </p>
+      </div>
+    ),
+  },
+  {
+    date: 'June 2020 - March 2021',
+    location: 'Grammarly',
+    title: 'Data Analyst Intern',
+    content: (
+      <div>
+        <p>
+          - Assisted in collecting and preprocessing sales data for forecasting models
+        </p>
+        <p>
+          - Built simple linear regression models to analyze regional sales trends
+        </p>
+        <p>
+          - Presented findings to non-technical stakeholders
+        </p>
+        <p>
+          - Built dashboards in Plotly Dash and performed trend analysis with SQL and Pandas to support marketing strategies.
+        </p>
+      </div>
     ),
   },
 ];
@@ -289,19 +555,19 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      name: 'Engineering Manager (Guideline)',
+      text: "Michael consistently delivered high-impact solutions under tight deadlines. His ability to bridge deep machine learning knowledge with production-ready engineering made a huge difference in launching our fraud detection and virtual assistant systems. He’s not only technically strong but also highly collaborative and reliable.",
+      image: '1.jpg',
     },
     {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      name: 'Product Analyst (Instabase)',
+      text: "Working with Michael on the recommendation engine project was a game-changer. He translated complex data into actionable insights and built robust pipelines that significantly improved customer retention. His thoughtful approach to experimentation and UI development made him stand out across both product and engineering teams.",
+      image: '3.jpg'
     },
     {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'Director of Data Science (Grammarly)',
+      text: "Even as an intern, Michael demonstrated impressive initiative and analytical rigor. His dashboards and regression models helped us uncover trends we hadn't noticed before. He quickly became a go-to team member for turning messy data into clear, strategic insights.",
+      image: '2.jpg',
     },
   ],
 };
@@ -312,27 +578,22 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: 'Welcome to my contact page! I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.',
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'michaelmurphy2223@hotmail.com',
+      href: 'mailto:michaelmurphy2223@hotmail.com',
     },
     {
-      type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
-    },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      type: ContactType.LinkedIn,
+      text: 'Titusville, FL',
+      href: 'https://www.linkedin.com/in/michael-murphy-15aba8374/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'MichaelMurphy2223',
+      href: 'https://github.com/michaelmurphy2223',
     },
   ],
 };
@@ -341,9 +602,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/michaelmurphy2223' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/michael-murphy-15aba8374/' },
 ];
