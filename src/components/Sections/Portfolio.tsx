@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import Image from 'next/image';
-import { FC, memo, MouseEvent, useCallback, useRef, useState } from 'react';
+import {FC, memo, MouseEvent, useCallback, useRef, useState} from 'react';
 
-import { portfolioItems, SectionId } from '../../data/data';
-import { PortfolioItem } from '../../data/dataDef';
+import {portfolioItems, SectionId} from '../../data/data';
+import {PortfolioItem} from '../../data/dataDef';
 import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
 import Section from '../Layout/Section';
 
-import { Dialog } from '@headlessui/react'
+import {Dialog} from '@headlessui/react';
 
 const Portfolio: FC = memo(() => {
   return (
@@ -16,7 +16,7 @@ const Portfolio: FC = memo(() => {
         <h2 className="self-center text-xl font-bold text-white">Check out some of my work</h2>
         <div className=" w-full columns-2 md:columns-3 lg:columns-4">
           {portfolioItems.map((item, index) => {
-            const { title, image } = item;
+            const {title, image} = item;
             return (
               <div className="pb-6" key={`${title}-${index}`}>
                 <div
@@ -38,10 +38,10 @@ const Portfolio: FC = memo(() => {
 Portfolio.displayName = 'Portfolio';
 export default Portfolio;
 
-const ItemOverlay: FC<{ item: PortfolioItem }> = memo(({ item: { title, description, content } }) => {
+const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {title, description, content}}) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const linkRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   useDetectOutsideClick(linkRef, () => setShowOverlay(false));
 
   const handleItemClick = useCallback(
@@ -61,7 +61,8 @@ const ItemOverlay: FC<{ item: PortfolioItem }> = memo(({ item: { title, descript
         className={classNames(
           'absolute inset-0 h-full w-full  bg-gray-900 transition-all duration-300',
           'opacity-0 hover:opacity-80',
-          showOverlay ? 'opacity-80' : 'opacity-0', 'hover:cursor-pointer',
+          showOverlay ? 'opacity-80' : 'opacity-0',
+          'hover:cursor-pointer',
         )}
         onClick={handleItemClick}
         ref={linkRef}>
@@ -72,18 +73,19 @@ const ItemOverlay: FC<{ item: PortfolioItem }> = memo(({ item: { title, descript
           </div>
         </div>
       </div>
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50 text-white border border-1 rounded-lg transition duration-300 ease-out">
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className="relative z-50 text-white border border-1 rounded-lg transition duration-300 ease-out">
         <div className="fixed inset-0 w-screen overflow-y-auto p-4">
           <div className="flex min-h-full items-center justify-center">
             <Dialog.Panel className="max-w-3xl space-y-4 bg-neutral-700 p-12">
               <Dialog.Title className="font-bold">{title}</Dialog.Title>
-              {
-                content ? content : <p className="text-sm text-white">{description}</p>
-              }
+              {content ? content : <p className="text-sm text-white">{description}</p>}
             </Dialog.Panel>
           </div>
         </div>
-      </Dialog >
+      </Dialog>
     </>
   );
 });
