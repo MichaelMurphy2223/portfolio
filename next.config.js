@@ -15,6 +15,7 @@ const nextConfig = {
 
     return config;
   },
+  output: 'export',
   assetPrefix: './',
   basePath: '/portfolio',
   compress: true,
