@@ -1,9 +1,7 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  BuildingOffice2Icon,
   CalendarIcon,
-  FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -14,18 +12,11 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/profilepic.jpg';
+import porfolioImage1 from '../images/portfolio/fraud.jpg';
+import porfolioImage2 from '../images/portfolio/health.jpg';
+import porfolioImage3 from '../images/portfolio/recommend.jpg';
+import porfolioImage4 from '../images/portfolio/ocr.jpg';
+import profilepic from '../images/profilepic.png';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -69,18 +60,14 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `I'm Michael Murphy`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        I'm a result-driven <strong className="text-stone-100">Machine Learning / Full Stack Software Engineer</strong>, 
+        with 5+ years of experience building scalable, production-grade ML systems and full-stack web applications. 
+        Proficient in <strong className="text-stone-100">Python, React, Django,</strong> and <strong className="text-stone-100">AWS</strong>, with expertise in <strong className="text-stone-100">LLMs, NLP</strong>, and <strong className="text-stone-100">MLOps</strong>. 
+        Proven ability to deliver end-to-end solutions that combine intelligent automation with modern web interfaces.
       </p>
     </>
   ),
@@ -104,16 +91,14 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `Results-driven Machine Learning & Software Engineer with 5+ years of experience building scalable, production-grade ML systems and full-stack web applications. 
+  Proficient in Python, React, Django, and AWS, with expertise in LLMs, NLP, and MLOps. 
+  Proven ability to deliver end-to-end solutions that combine intelligent automation with modern web interfaces.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Titusville, FL', Icon: MapIcon},
+    {label: 'Age', text: '30', Icon: CalendarIcon},
+    {label: 'Interests', text: 'Football', Icon: SparklesIcon},
+    {label: 'Study', text: 'CUNY - Hunter College', Icon: AcademicCapIcon},
   ],
 };
 
@@ -122,19 +107,36 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Machine Learning Engineering',
     skills: [
       {
-        name: 'English',
-        level: 10,
+        name: 'Natural Language Processing',
+        level: 9,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'Large Language Models',
+        level: 9,
       },
       {
-        name: 'Spanish',
-        level: 3,
+        name: 'Computer Vision',
+        level: 8,
+      },
+    ],
+  },
+  {
+    name: 'Data Engineering',
+    skills: [
+      {
+        name: 'Data Pipelines',
+        level: 9,
+      },
+      {
+        name: 'Data Warehousing',
+        level: 8,
+      },
+      {
+        name: 'Databricks',
+        level: 8,
       },
     ],
   },
@@ -146,12 +148,20 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
+        name: 'Next.js',
+        level: 9,
+      },
+      {
+        name: 'Vue.js',
+        level: 8,
+      },
+      {
         name: 'Typescript',
-        level: 7,
+        level: 10,
       },
       {
         name: 'GraphQL',
-        level: 6,
+        level: 10,
       },
     ],
   },
@@ -163,29 +173,37 @@ export const skills: SkillGroup[] = [
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
+        name: 'Django',
+        level: 7,
       },
       {
         name: 'Golang',
-        level: 4,
+        level: 6,
       },
     ],
   },
   {
-    name: 'Mobile development',
+    name: 'Cloud & DevOps',
     skills: [
       {
-        name: 'React Native',
-        level: 9,
+        name: 'AWS',
+        level: 8,
       },
       {
-        name: 'Flutter',
-        level: 4,
+        name: 'Google Cloud Platform',
+        level: 8,
       },
       {
-        name: 'Swift',
-        level: 3,
+        name: 'Azure',
+        level: 7,
+      },
+      {
+        name: 'Kubernetes',
+        level: 7,
+      },
+      {
+        name: 'Docker',
+        level: 7,
       },
     ],
   },
@@ -196,70 +214,28 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
+    title: 'Real-Time Fraud Detection',
+    description: 'Real-time fraud detection system using machine learning to analyze transaction patterns and detect anomalies.',
     url: 'https://reactresume.com',
     image: porfolioImage1,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
+    title: 'NLP-Powered Health Assistant',
+    description: 'NLP-powered virtual assistant for scheduling appointments and answering health-related FAQs',
     url: 'https://reactresume.com',
     image: porfolioImage2,
   },
   {
-    title: 'Project title 3',
+    title: 'Real-Time Recommendation System',
     description: 'Give a short description of your project here.',
     url: 'https://reactresume.com',
     image: porfolioImage3,
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
+    title: 'Document OCR System',
+    description: 'OCR system for extracting text from financial documents, enabling automated data entry and analysis.',
     url: 'https://reactresume.com',
     image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
   },
 ];
 
