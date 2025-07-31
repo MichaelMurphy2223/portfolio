@@ -15,6 +15,8 @@ const nextConfig = {
 
     return config;
   },
+  assetPrefix: './',
+  basePath: '/portfolio',
   compress: true,
   generateEtags: true,
   pageExtensions: ['tsx', 'mdx', 'ts'],
