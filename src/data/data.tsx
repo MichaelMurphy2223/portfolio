@@ -7,6 +7,11 @@ import porfolioImage1 from '../images/portfolio/fraud.jpg';
 import porfolioImage2 from '../images/portfolio/health.jpg';
 import porfolioImage3 from '../images/portfolio/recommend.jpg';
 import porfolioImage4 from '../images/portfolio/ocr.jpg';
+
+import testmonial1 from '../images/portfolio/1.jpg';
+import testmonial2 from '../images/portfolio/2.jpg';
+import testmonial3 from '../images/portfolio/3.jpg';
+
 import profilepic from '../images/profilepic.png';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -66,7 +71,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/assets/MichaelMurphy.docx',
+      href: 'assets/MichaelMurphy.docx',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -618,17 +623,17 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Engineering Manager (Guideline)',
       text: 'Michael consistently delivered high-impact solutions under tight deadlines. His ability to bridge deep machine learning knowledge with production-ready engineering made a huge difference in launching our fraud detection and virtual assistant systems. He’s not only technically strong but also highly collaborative and reliable.',
-      image: '1.jpg',
+      image: testmonial1,
     },
     {
       name: 'Product Analyst (Instabase)',
       text: 'Working with Michael on the recommendation engine project was a game-changer. He translated complex data into actionable insights and built robust pipelines that significantly improved customer retention. His thoughtful approach to experimentation and UI development made him stand out across both product and engineering teams.',
-      image: '3.jpg',
+      image: testmonial3,
     },
     {
       name: 'Director of Data Science (Grammarly)',
       text: "Even as an intern, Michael demonstrated impressive initiative and analytical rigor. His dashboards and regression models helped us uncover trends we hadn't noticed before. He quickly became a go-to team member for turning messy data into clear, strategic insights.",
-      image: '2.jpg',
+      image: testmonial2,
     },
   ],
 };
